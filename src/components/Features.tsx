@@ -1,6 +1,8 @@
+// Import card components and icons we need
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Brain, Calendar, Users, BarChart3, Shield, Heart } from "lucide-react";
 
+// Simple list of our app features - each has an icon, title, and description
 const features = [
   {
     icon: Brain,
@@ -9,7 +11,7 @@ const features = [
   },
   {
     icon: Calendar,
-    title: "Daily Routine Support",
+    title: "Daily Routine Support", 
     description: "Smart reminders and scheduling assistance to help maintain independence and reduce anxiety about forgotten tasks."
   },
   {
@@ -34,10 +36,13 @@ const features = [
   }
 ];
 
+// This section shows all our app features in a grid
 const Features = () => {
   return (
     <section id="features" className="py-20 bg-background">
       <div className="container mx-auto px-4">
+        
+        {/* Section header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-foreground mb-4">
             Features That Make a <span className="text-transparent bg-clip-text bg-gradient-to-r from-healing-blue to-healing-green">Difference</span>
@@ -47,18 +52,23 @@ const Features = () => {
           </p>
         </div>
         
+        {/* Grid of feature cards */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Loop through each feature and create a card */}
           {features.map((feature, index) => (
             <Card key={index} className="border-0 bg-gradient-to-br from-card to-soft-blue/30 hover:shadow-lg transition-all duration-300 group">
               <CardHeader className="space-y-4">
+                {/* Icon container */}
                 <div className="w-12 h-12 bg-gradient-to-br from-healing-blue to-healing-green rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                   <feature.icon className="w-6 h-6 text-white" />
                 </div>
+                {/* Feature title */}
                 <CardTitle className="text-xl text-foreground">
                   {feature.title}
                 </CardTitle>
               </CardHeader>
               <CardContent>
+                {/* Feature description */}
                 <CardDescription className="text-muted-foreground leading-relaxed">
                   {feature.description}
                 </CardDescription>
